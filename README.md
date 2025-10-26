@@ -15,7 +15,7 @@ PrácticoFinal_CAE/
 ├── assets/                 # Recursos
 │   └── img/                # Imágenes
 └── README.md               # Este archivo
-
+```
 📖 Contenido de las secciones
 | Sección | Descripción |
 |---------|-------------|
@@ -23,7 +23,7 @@ PrácticoFinal_CAE/
 | styles/ | Carpeta con los archivos CSS globales |
 | scripts/ | Carpeta con los scripts de la aplicación |
 | assets/ | Carpeta con imágenes y otros recursos |
-```
+
 🚀 Uso
 1. Clonar el repositorio:
    ```bash
