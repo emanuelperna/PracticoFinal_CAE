@@ -1,6 +1,7 @@
 🎨 Practico Final CAE - Curso de Front End
 
-📚 Descripción
+📚 Descripción:
+
 Este repositorio contiene el proyecto final del curso CAE. Incluye los archivos HTML, CSS y JavaScript necesarios para la aplicación web desarrollada, organizada de manera clara para su estudio y replicación.
 
 🏗️ Estructura general
