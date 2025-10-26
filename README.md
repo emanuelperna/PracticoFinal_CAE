@@ -4,7 +4,7 @@
 Este repositorio contiene el proyecto final del curso. Incluye los archivos HTML, CSS y JavaScript necesarios para la aplicación web desarrollada, organizada de manera clara para su estudio y replicación.
 
 🏗️ Estructura general:
-
+```
 PrácticoFinal_CAE/
 │
 ├── index.html              # Landing principal
@@ -23,7 +23,7 @@ PrácticoFinal_CAE/
 | styles/ | Carpeta con los archivos CSS globales |
 | scripts/ | Carpeta con los scripts de la aplicación |
 | assets/ | Carpeta con imágenes y otros recursos |
-
+```
 🚀 Uso
 1. Clonar el repositorio:
    ```bash
