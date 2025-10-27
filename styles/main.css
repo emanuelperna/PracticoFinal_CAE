@@ -71,7 +71,7 @@ h2 {
 
 /*Efecto hover para dar sensacion de "levantar"*/
 #camiseta-escudo-container > div:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
   z-index: 10;
 }
@@ -87,21 +87,39 @@ h2 {
 }
 
 /*Estilo para cada tarjeta de jugador*/
-#jugadores-container .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.seccion-card {
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
-  box-shadow: 0 2px 8px var(--color-gris-sombra);
-  overflow: hidden;
-  margin-bottom: 1rem;
   background-color: #f8f8f8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.seccion-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/*Hover de tarjeta de jugador*/
-#jugadores-container .card:hover {
+.jugador-card {
+  border-radius: 12px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.jugador-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   z-index: 10;
+}
+
+.titulo-posicion {
+  color: var(--color-rojo);
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-rojo);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
 }
 
 /*Estilo de imagen del estadio*/
@@ -116,7 +134,7 @@ h2 {
 
 /*Efecto hover sobre imagen del estadio*/
 #cancha-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
   z-index: 10;
 }
@@ -133,7 +151,7 @@ h2 {
 
 /*Hover sobre imagen de campeonatos*/
 #campeonatos img:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
   z-index: 10;
 }
@@ -151,7 +169,7 @@ h2 {
 
 /*Hover sobre cada imagen*/
 #galeria-container > div:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
   z-index: 10;
 }
@@ -186,7 +204,7 @@ h2 {
 
 /*Hover tarjeta*/
 #patrocinadores-container > div:hover {
-  transform: scale(1.08);
+  transform: scale(1.02);
   background-color: #ffffff;
 }
 
