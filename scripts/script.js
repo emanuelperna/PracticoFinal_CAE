@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  cargarJugadores();            // Carga la lista de jugadores
+  mostrarSecciones();            // Carga la lista de jugadores
   cargarCancha();               // Muestra información del estadio
   cargarGaleria();              // Carga imágenes en la galería
   cargarCamisetaYEscudo();      // Muestra la camiseta y el escudo
@@ -26,60 +26,79 @@ function configurarToggleHistoria() {
 }
 
 //Jugadores
-function cargarJugadores() {
-  const jugadoresPorPosicion = [
-    {
-      posicion: "Arquero",
-      nombres: ["Airasca Santiago", "Gil Gabriel", "Gonzalez Valentin"]
-    },
-    {
-      posicion: "Defensor",
-      nombres: [
-        "Andino Manuel", "Ferrando Marcos", "Fontana Santiago", 
-        "Monzon Maximiliano", "Velázquez Gaspar", "Zabaleta Javier",
-        "Rios Juan", "Rodriguez Joaquín", "Montiel Gonzalo",
-        "Galetto Máximo", "Guzmán Laureano"
-      ]
-    },
-    {
-      posicion: "Mediocampista",
-      nombres: [
-        "Arce Timoteo", "Bocco Martin", "Cortez Fermin",
-        "Ferrando Joaquín", "Granero Juan Pablo", "Reguero Franco",
-        "Rodriguez Bernabe", "Moyano Francisco", "Victorio Juan Ignacio",
-        "Zarate Ezequiel"
-      ]
-    },
-    {
-      posicion: "Delantero",
-      nombres: [
-        "Dopazo Martin", "Sanchez Bruno", "Cataldo Ramiro",
-        "Bruera Maximiliano", "Alarcon Francisco", "Zabaleta Matias"
-      ]
-    }
+const jugadoresPorPosicion = [
+  {
+    posicion: "Arqueros",
+    nombres: ["Airasca Santiago", "Gil Gabriel", "Gonzalez Valentin"]
+  },
+  {
+    posicion: "Defensores",
+    nombres: [
+    "Andino Manuel", "Ferrando Marcos", "Fontana Santiago", 
+    "Monzon Maximiliano", "Velázquez Gaspar", "Zabaleta Javier",
+    "Rios Juan", "Rodriguez Joaquín", "Montiel Gonzalo",
+    "Galetto Máximo", "Guzmán Laureano"
+    ]
+  },
+  {
+     posicion: "Mediocampistas",
+     nombres: [
+     "Arce Timoteo", "Bocco Martin", "Cortez Fermin",
+     "Ferrando Joaquín", "Granero Juan Pablo", "Reguero Franco",
+     "Rodriguez Bernabe", "Moyano Francisco", "Victorio Juan Ignacio",
+     "Zarate Ezequiel"
+     ]
+  },
+  {
+    posicion: "Delanteros",
+    nombres: [
+    "Dopazo Martin", "Sanchez Bruno", "Cataldo Ramiro",
+    "Bruera Maximiliano", "Alarcon Francisco", "Zabaleta Matias"
+     ]
+   }
   ];
 
-  const container = document.getElementById('jugadores-container');
-  if (!container) return;
+ function mostrarSecciones() {
+   const seccionesContainer = document.getElementById('secciones-container');
+   const detalleContainer = document.getElementById('detalle-container');
+   seccionesContainer.innerHTML = '';
+   detalleContainer.innerHTML = '';
 
-  let html = '';
+   jugadoresPorPosicion.forEach((grupo, index) => {
+    const card = document.createElement('div');
+    card.className = 'col-md-3 mb-4';
+    card.innerHTML = `
+      <div class="card seccion-card h-100" onclick="mostrarDetalle(${index})">
+        <div class="card-body d-flex align-items-center justify-content-center">
+          <h4 class="card-title">${grupo.posicion}</h4>
+        </div>
+      </div>
+    `;
+    seccionesContainer.appendChild(card);
+  });
+}
 
-  jugadoresPorPosicion.forEach(grupo => {
-    grupo.nombres.forEach(nombre => {
-      html += `
+function mostrarDetalle(index) {
+  const grupo = jugadoresPorPosicion[index];
+  const detalleContainer = document.getElementById('detalle-container');
+  const seccionesContainer = document.getElementById('secciones-container');
+  seccionesContainer.innerHTML = '';
+
+  detalleContainer.innerHTML = `
+    <h3 class="titulo-posicion">${grupo.posicion}</h3>
+    <div class="row">
+      ${grupo.nombres.map(nombre => `
         <div class="col-md-4 mb-4">
-          <div class="card">
+          <div class="card jugador-card">
             <div class="card-body">
               <h5 class="card-title">${nombre}</h5>
-              <p class="card-text">${grupo.posicion}</p>
             </div>
           </div>
         </div>
-      `;
-    });
-  });
-
-  container.innerHTML = html;
+      `).join('')}
+   </div>
+   <button class="btn btn-outline-danger mt-3" onclick="mostrarSecciones()">Volver</button>
+  `;
 }
 
 //Cancha: muestra imagen y datos del estadio
